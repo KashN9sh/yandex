@@ -17,7 +17,12 @@ def task_overlap(pool_id):
     api_url = base+'/tasks?pool_id='+str(pool_id)
     response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
-       return response.json()
+        overlaps=[]
+        i=0
+        for item in response.json()['items']:
+            overlaps[i]=item["overlap"]
+            i+=1
+        return overlaps
     else:
        print('Error '+str(response.status_code))
 
