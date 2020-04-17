@@ -1,7 +1,7 @@
 import requests
 import json
 
-token = 'AgAAAAAPFVH2AAIbujRgrWafYUwrtif00ZzvoJE'
+token = ''
 base = 'https://sandbox.toloka.yandex.ru/api/v1'
 headers = {"Authorization":"OAuth " + token}
 
@@ -41,5 +41,3 @@ def task_overlap(pool_id):
         return overlaps
     else:
        print('Error '+str(response.status_code))
-
-print(expire(364576))
